@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="text-white py-16 px-6">
+    <footer className="text-white py-16 px-6c">
       <div className="max-w-4xl mx-auto">
 
         {/* Hlavní mřížka odkazů */}
