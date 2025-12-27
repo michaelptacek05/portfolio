@@ -1,4 +1,5 @@
 import { PrimaryButton, OutlineButton } from "./button";
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -9,11 +10,12 @@ export default function Hero() {
       
       <div className="relative w-64 h-64 mb-8">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 rounded-full" />
-        <img 
-          src="/photo.jpg" 
+        <Image 
+          src="/photo.jpg"
           alt="Michael Ptáček"
-          title="Michael Ptáček"
-          className="rounded-full w-full h-full object-cover border border-white/10"
+          fill
+          priority
+          className="rounded-full object-cover border border-white/10"
         />
       </div>
 
