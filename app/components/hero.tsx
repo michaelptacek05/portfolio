@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full" />
       
       
-      <div className="relative w-64 h-64 mb-8">
+      <div className="relative w-48 h-48 mb-8">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 rounded-full" />
         <Image 
           src="/photo.jpg"

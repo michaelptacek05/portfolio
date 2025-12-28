@@ -2,27 +2,19 @@
 
 import React, { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { NAV_LINKS } from '../constants/links';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  // Tvoje konkrétní odkazy
-  const navLinks = [
-    { name: 'Domů', href: '#' },
-    { name: 'O mně', href: '#' },
-    { name: 'Moje práce', href: '#' },
-    { name: 'Pracovní zkušenost', href: '#' },
-    { name: 'Kontakt', href: '#' },
-  ];
-
+ 
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
       
       {/* DESKTOP VERZE - Pilulka (zobrazí se nad 768px) */}
       <div className="hidden md:flex items-center gap-6 bg-white/5 backdrop-blur-lg border border-white/10 px-8 py-3 rounded-full shadow-2xl">
-        {navLinks.map((link) => (
-          <a key={link.name} href={link.href} className="text-sm text-gray-400 font-medium hover:text-white transition">
-            {link.name}
+        {NAV_LINKS.map((link) => (
+          <a key={link.label} href={link.href} className="text-sm text-gray-400 font-medium hover:text-white transition">
+            {link.label}
           </a>
         ))}
       </div>
@@ -40,14 +32,14 @@ export default function Navbar() {
         {isOpen && (
           <div className="absolute top-16 right-0 w-64 bg-[#111] border border-white/10 rounded-2xl p-2 shadow-2xl animate-in fade-in zoom-in duration-200 origin-top-right">
             <div className="flex flex-col">
-              {navLinks.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.label}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className="px-4 py-4 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition text-base font-medium border-b border-white/5 last:border-none"
                 >
-                  {link.name}
+                  {link.label}
                 </a>
               ))}
               <div className="mt-2 p-2">

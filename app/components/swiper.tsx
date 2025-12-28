@@ -10,8 +10,9 @@ import 'swiper/css';
 // Import ikon z React Icons
 import {
   SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiAstro, SiReact,
-  SiNextdotjs, SiSass, SiVercel, SiPhp, SiSymfony, SiNette,
-  SiFigma, SiAdobe, SiAffinity, SiDavinciresolve
+  SiNextdotjs, SiSass, SiVercel, SiNpm, SiPhp, SiSymfony, SiNette,
+  SiFigma, SiAdobe, SiAdobeillustrator, SiAdobephotoshop, SiAdobeindesign, SiAdobexd, SiAdobeaftereffects, SiAffinity, SiDavinciresolve,
+  SiGit
 } from 'react-icons/si';
 
 interface TechItem {
@@ -29,11 +30,18 @@ const TECH_STACK_DATA: TechItem[] = [
   { name: "Next.js", icon: SiNextdotjs },
   { name: "Sass", icon: SiSass },
   { name: "Vercel", icon: SiVercel },
+  { name: "NPM", icon: SiNpm },
   { name: "PHP", icon: SiPhp },
   { name: "Symfony", icon: SiSymfony },
   { name: "Nette Framework", icon: SiNette },
+  { name: "Git", icon: SiGit },
   { name: "Figma", icon: SiFigma },
   { name: "Adobe", icon: SiAdobe },
+  { name: "Adobe XD", icon: SiAdobexd, },
+  { name: "Adobe Phoshotop", icon: SiAdobephotoshop },
+  { name: "Adobe Illustrator", icon: SiAdobeillustrator },
+  { name: "Adobe InDesign", icon: SiAdobeindesign },
+  { name: "Adobe After Effects", icon: SiAdobeaftereffects },
   { name: "Affinity", icon: SiAffinity },
   { name: "DaVinci Resolve", icon: SiDavinciresolve },
 ];
@@ -62,8 +70,8 @@ export default function TechStack() {
             <SwiperSlide key={index} className="flex items-center justify-center">
               <div 
                 className="grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-help"
-                title={tech.name} // Zobrazí jméno při najetí myší
-                aria-label={tech.name} // Pro čtečky obrazovky
+                title={tech.name}
+                aria-label={tech.name}
               >
                 <tech.icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
               </div>
