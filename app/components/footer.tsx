@@ -11,7 +11,11 @@ export default function Footer() {
         {/* Hlavní mřížka odkazů */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 mb-16 md:mb-20">
           {/* Sloupec: Navigace */}
+          
           <div className="flex flex-col gap-4">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-gray-500 font-bold mb-2">
+              Navigace
+            </h4>
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}

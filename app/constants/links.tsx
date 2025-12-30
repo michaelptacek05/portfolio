@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiInstagram, SiGithub, SiBehance } from "react-icons/si";
+import { SiInstagram, SiGithub, SiBehance, SiLinkedin } from "react-icons/si";
 
 export interface NavItem {
     label: string;
@@ -15,13 +15,14 @@ export interface SocialItem {
 export const NAV_LINKS: NavItem[] = [
     { label: "Domů", href: "/" },
     { label: "O mně", href: "/about" },
-    { label: "Projekty", href: "#projekty" },
-    { label: "Pracovní zkušenost", href: "#projekty" },
+    { label: "Projekty", href: "/projects" },
+    { label: "Pracovní zkušenost", href: "/experience" },
     { label: "Kontakt", href: "#kontakt" },
 ];
 
 export const SOCIALS: SocialItem[] = [
-    { label: "Instagram", href: "/", icon: SiInstagram },
-    { label: "GitHub", href: "/", icon: SiGithub },
-    { label: "Behance", href: "/", icon: SiBehance },
+    { label: "Instagram", href: "https://www.instagram.com/michal.718/", icon: SiInstagram },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/ptacekmichael/", icon: SiLinkedin },
+    { label: "GitHub", href: "https://github.com/michaelptacek05/", icon: SiGithub },
+    { label: "Behance", href: "https://www.behance.net/michaelptek1", icon: SiBehance },
 ];

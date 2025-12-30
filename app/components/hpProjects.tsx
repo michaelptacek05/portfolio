@@ -1,30 +1,13 @@
-import ProjectCard from './projectCard';
-import { PrimaryButton, OutlineButton } from "./button";
-
-// Definice pole s typem Project[]
-interface ProjectItem {
-  title: string;
-  description: string;
-  tags: string[];
-  image: string;
-}
-
-const PROJECTS_DATA: ProjectItem[] = [
-  {
-    title: "Buď Fit 24",
-    description: "Návrh zdravotní aplikace pro děti s nadváhou",
-    tags: ["Adobe XD", "Figma", "Illustrator"],
-    image: "/project-links.png",
-  },
-  {
-    title: "Poradci Choceň",
-    description: "Stránka pro finanční poradce",
-    tags: ["Astro.js", "Tailwind CSS", "Figma"],
-    image: "/project-blog.png",
-  }
-];
+import ProjectCard from "./projectCard";
+import { PrimaryButton } from "./button";
+import { PROJECTS } from "@/app/constants/projects";
+import Link from 'next/link';
 
 export default function HPProjects() {
+  const featuredProjects = PROJECTS.filter(p => 
+    p.slug === "bf24" || p.slug === "poradci-chocen"
+  );
+
   return (
     <section className="text-white py-20 px-6">
       <div className="max-w-4xl mx-auto">
@@ -33,16 +16,26 @@ export default function HPProjects() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {PROJECTS_DATA.map((project, index) => (
+          {featuredProjects.map((project) => (
             <ProjectCard 
-              key={index}
-              {...project} 
+              key={project.slug}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              image={project.images[0] || ""}
+              
+              // 3. TOTO JE TO KOUZLO: Odkazujeme na /projects/[slug]
+              // Díky tomu to Next.js zachytí a otevře jako modal (protože modal je definovaný v /projects)
+              href={`/projects/${project.slug}`} 
             />
           ))}
         </div>
 
+        {/* Oprava tlačítka "více projektů" aby fungovalo */}
         <div className="flex justify-center mt-12">
-          <PrimaryButton>více projektů</PrimaryButton>
+          <Link href="/projects">
+            <PrimaryButton>více projektů</PrimaryButton>
+          </Link>
         </div>
       </div>
     </section>

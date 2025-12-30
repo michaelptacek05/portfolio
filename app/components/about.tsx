@@ -36,10 +36,10 @@ export default function AboutMe() {
 
           {/* Text */}
           <p className="text-gray-400 leading-relaxed mb-10 text-center lg:text-left">
-            Jsem zkušený Frontend Developer s víceletou praxí v
+            Jsem zkušený Frontend Developer a UX/UI Designer s víceletou praxí v
             oboru. Během své kariéry jsem měl to štěstí spolupracovat s
-            různými organizacemi a přispívat k jejich úspěchu a růstu.
-            Zaměřuji se na čistý kód, uživatelskou přívětivost a moderní
+            různými firmami a přispívat k jejich úspěchu a růstu.
+            Zaměřuji se na čistý kód, intuitivní návhry, uživatelskou přívětivost a moderní
             technologie.
           </p>
           {/* Tools I use */}
