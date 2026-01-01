@@ -17,7 +17,7 @@ export const NAV_LINKS: NavItem[] = [
     { label: "O mně", href: "/about" },
     { label: "Projekty", href: "/projects" },
     { label: "Pracovní zkušenost", href: "/experience" },
-    { label: "Kontakt", href: "#kontakt" },
+    { label: "Kontakt", href: "/contact" },
 ];
 
 export const SOCIALS: SocialItem[] = [
