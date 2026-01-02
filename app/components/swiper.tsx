@@ -3,11 +3,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-
-// Import Swiper styles
 import 'swiper/css';
-
-// Import ikon z React Icons
 import {
   SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiAstro, SiReact,
   SiNextdotjs, SiSass, SiVercel, SiNpm, SiPhp, SiSymfony, SiNette,

@@ -35,19 +35,46 @@ function ContactForm() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    // 1. Kontrola, zda je reCAPTCHA načtená
     if (!executeRecaptcha) {
       console.log("ReCaptcha not yet available");
       return;
     }
+
     setIsSubmitting(true);
+
     try {
+      // 2. Získání tokenu (tohle tam zůstává)
       const token = await executeRecaptcha("contact_form");
-      console.log("Odesílám data:", data, "Token:", token);
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulace
-      setSubmitStatus('success');
-      reset();
+
+      // --- TADY ZAČÍNÁ ZMĚNA ---
+      // 3. Odeslání dat na tvůj vlastní backend (/api/send-email)
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          // Mapování dat z formuláře na to, co očekává backend:
+          name: data.fullName, // Ve formuláři je to 'fullName', backend čeká 'name'
+          email: data.email,
+          // Protože backend čeká jen "message", sloučíme tam i firmu a telefon, ať se neztratí
+          message: `Firma: ${data.company || '-'} \nTelefon: ${data.phone || '-'}\n\nZpráva:\n${data.message}`,
+          recaptchaToken: token,
+        }),
+      });
+
+      // 4. Kontrola, jestli se to povedlo (status 200 OK)
+      if (response.ok) {
+        setSubmitStatus('success');
+        reset(); // Vymaže formulář
+      } else {
+        // Pokud server vrátí chybu (např. 400 nebo 500)
+        console.error("Chyba při odesílání");
+        setSubmitStatus('error');
+      }
+      // --- KONEC ZMĚNY ---
+
     } catch (error) {
-      console.error(error);
+      console.error("Kritická chyba:", error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
