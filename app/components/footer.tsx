@@ -51,9 +51,14 @@ export default function Footer() {
         </div>
 
         {/* Spodní lišta - Copyright */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-col justify-between items-left gap-4">
           <p className="text-sm text-gray-500 font-medium text-center sm:text-left">
             © {currentYear} Michael Ptáček
+          </p>
+          <p className="text-xs text-gray-500 mt-4 text-left">
+            Tento web je chráněn pomocí reCAPTCHA a platí 
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white ml-1 underline">Zásady ochrany soukromí</a> a 
+            <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white ml-1 underline">Smluvní podmínky</a> Google.
           </p>
           <div className="hidden sm:block h-1 w-1 rounded-full bg-gray-800" />
         </div>
