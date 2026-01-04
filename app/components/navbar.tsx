@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { NAV_LINKS } from '../constants/links';
+import { Reveal } from './reveal';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
  
   return (
+    
     <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
       
       {/* DESKTOP VERZE - Pilulka (zobrazí se nad 768px) */}
@@ -59,5 +61,6 @@ export default function Navbar() {
         </button>
       </div>
     </nav>
+ 
   );
 }

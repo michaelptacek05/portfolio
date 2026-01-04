@@ -53,7 +53,7 @@ export default function CookieBanner() {
                 <FiCode className="text-xl" />
               </div>
               <div>
-                <h3 className="text-white font-semibold text-lg">Sušenky? 🍪</h3>
+                <h3 className="text-white font-semibold text-lg">Sušenky?</h3>
                 <p className="text-gray-400 text-sm mt-1 leading-relaxed">
                   Používám pouze nezbytné cookies pro fungování webu a anonymní statistiky pro zlepšení požitku. Žádné sledování pro reklamu.
                 </p>

@@ -1,37 +1,36 @@
-import React from 'react';
-import ExperienceCard from '../components/experienceCard';
-import { EXPERIENCES } from '@/app/constants/experience';
+import React from "react";
+import ExperienceCard from "../components/experienceCard";
+import { EXPERIENCES } from "@/app/constants/experience";
+import { Reveal } from "../components/reveal";
 
 export default function ExperiencePage() {
   return (
-    <main className="min-h-screen text-white pt-32 pb-20 px-6 relative overflow-hidden">
-      
-      {/* Ambientní záře v pozadí */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[400px] bg-gradient-to-r from-blue-900/20 to-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
+    <Reveal width="100%" delay={0.2}>
+      <main className="min-h-screen text-white pt-32 pb-20 px-6 relative overflow-hidden">
+        {/* Ambientní záře v pozadí */}
+        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[400px] bg-gradient-to-r from-blue-900/20 to-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        
-        {/* Nadpis sekce - serif font podle zbytku webu */}
-        <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl mb-4 tracking-tight">
-            Pracovní zkušenosti
-          </h1>
-          <p className="text-gray-400 leading-relaxed mb-10 text-center lg:text-left">
-            Přehled mé profesní dráhy a uplatněných dovedností.
-          </p>
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Nadpis sekce - serif font podle zbytku webu */}
+          <div className="mb-16">
+            <h1 className="text-4xl md:text-5xl mb-4 tracking-tight">
+              Pracovní zkušenosti
+            </h1>
+            <p className="text-gray-400 leading-relaxed mb-10 text-center lg:text-left">
+              Přehled mé profesní dráhy a uplatněných dovedností.
+            </p>
+          </div>
+
+          {/* Grid pro karty - 1 sloupec na mobilu, 2 na desktopu */}
+          <Reveal width="100%" delay={0.4}>
+            <div className="grid grid-cols-1 gap-6 auto-rows-fr">
+              {EXPERIENCES.map((exp, index) => (
+                <ExperienceCard key={index} {...exp} />
+              ))}
+            </div>
+          </Reveal>
         </div>
-
-        {/* Grid pro karty - 1 sloupec na mobilu, 2 na desktopu */}
-        <div className="grid grid-cols-1 gap-6 auto-rows-fr">
-          {EXPERIENCES.map((exp, index) => (
-            <ExperienceCard 
-              key={index}
-              {...exp}
-            />
-          ))}
-        </div>
-
-      </div>
-    </main>
+      </main>
+    </Reveal>
   );
 }

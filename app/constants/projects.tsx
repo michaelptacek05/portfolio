@@ -37,6 +37,7 @@ export const PROJECTS: Project[] = [
     fullText: "Spolupráce na UX/UI návrzích pro frontend i backend systému Institutu postgraduálního vzdělávání ve zdravotnictví (IPVZ). Součástí projektu byla analýza původního zastaralého řešení, kompletní modernizace uživatelského rozhraní a grafický návrh nových certifikátů.",
     tags: ["Adobe XD", "Photoshop", "Illustrator"],
     images: ["/projekty/ipvz/ipvz1.png", "/projekty/ipvz/ipvz2.png", "/projekty/ipvz/ipvz3.png", "/projekty/ipvz/ipvz4.png"],
+    projectUrl: "https://portal.ipvz.cz/",
     
   },
   {

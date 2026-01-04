@@ -1,11 +1,14 @@
 import React from "react";
 import { SiSpotify, SiInstagram, SiGithub, SiBehance } from "react-icons/si";
 import { NAV_LINKS, SOCIALS } from "../constants/links";
+import Link from "next/link";
+import { Reveal } from "./reveal";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
+    <Reveal width="100%" delay={0.1}>
     <footer className="text-white py-12 md:py-16 px-6">
       <div className="max-w-4xl mx-auto">
         {/* Hlavní mřížka odkazů */}
@@ -55,14 +58,20 @@ export default function Footer() {
           <p className="text-sm text-gray-500 font-medium text-center sm:text-left">
             © {currentYear} Michael Ptáček
           </p>
+          <p className="text-sm text-gray-600 mb-4">
+            Tento web používá soubory cookies k vylepšování uživatelského zážitku.{" "}
+            <Link href="/privacy" className="underline hover:text-black">
+              Více informací
+            </Link>.
+          </p>
           <p className="text-xs text-gray-500 mt-4 text-left">
             Tento web je chráněn pomocí reCAPTCHA a platí 
             <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white ml-1 underline">Zásady ochrany soukromí</a> a 
             <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white ml-1 underline">Smluvní podmínky</a> Google.
           </p>
-          
         </div>
       </div>
     </footer>
+    </Reveal>
   );
 }

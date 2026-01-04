@@ -2,9 +2,11 @@
 import React from 'react';
 import ProjectCard from '../components/projectCard';
 import { PROJECTS } from '../constants/projects';
+import { Reveal } from '../components/reveal';
 
 export default function ProjectsPage() {
   return (
+    <Reveal width='100%' delay={0.2}>
     <main className="min-h-screen bg-[#050505] text-white pt-32 pb-20 px-6 relative overflow-hidden">
       
       {/* ... (Záře a nadpisy zůstávají stejné) ... */}
@@ -43,5 +45,6 @@ export default function ProjectsPage() {
 
       </div>
     </main>
+    </Reveal>
   );
 }

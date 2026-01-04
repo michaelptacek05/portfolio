@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link'; // 1. Importujeme Link
+import { Reveal } from './reveal';
 
 interface ProjectCardProps {
-  title: string;
   description: string;
+  title: string;
   tags: string[];
   image: string;
   href: string; // 2. Přidali jsme povinný odkaz
@@ -13,6 +14,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, description, tags, image, href }: ProjectCardProps) {
   return (
+    <Reveal width='100%' delay={0.4}>
     <Link 
       href={href}
       className="group block bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-3 flex flex-col cursor-pointer hover:border-white/20 transition-all duration-300"
@@ -62,5 +64,6 @@ export default function ProjectCard({ title, description, tags, image, href }: P
         </div>
       </div>
     </Link>
+    </Reveal>
   );
 }
