@@ -1,5 +1,6 @@
 import { PrimaryButton, OutlineButton } from "./button";
 import Image from 'next/image';
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -34,9 +35,27 @@ export default function Hero() {
 
       {/* Akce */}
       <div className="flex flex-col sm:flex-row gap-4 items-center">
-        <PrimaryButton>spojte se</PrimaryButton>
-        <OutlineButton>životopis</OutlineButton>
-      </div>
+      
+      {/* 1. TLAČÍTKO - Interní odkaz (např. na stránku Kontakt) */}
+      <Link href="/contact"> 
+        {/* Pokud máš kontakt dole na téže stránce, použij href="#kontakt" */}
+        <PrimaryButton>
+          spojte se
+        </PrimaryButton>
+      </Link>
+
+      {/* 2. TLAČÍTKO - Externí soubor (PDF) */}
+      <a 
+        href="/cv.pdf"    // Cesta k souboru (viz níže)
+        target="_blank"          // Otevře v novém okně (To je to UX řešení)
+        rel="noopener noreferrer" // Bezpečnostní nutnost při target="_blank"
+      >
+        <OutlineButton>
+            životopis
+        </OutlineButton>
+      </a>
+
+    </div>
     </section>
   );
 }
