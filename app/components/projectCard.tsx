@@ -20,20 +20,14 @@ export default function ProjectCard({ title, description, tags, image, href }: P
 
       {/* Kontejner pro OBRÁZEK */}
       <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1.4rem] bg-black border border-white/5">
-        <div className="absolute inset-0 flex items-center justify-center bg-[#0d0d0d]">
-           <span className="text-3xl opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-30 transition-all duration-500">
-             🖼️
-           </span> 
-        </div>
-
-        {/* Next.js Image komponenta */}
-        {/* <Image 
+        
+        <Image 
           src={image} 
           alt={title} 
           fill 
           className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" 
         /> 
-        */}
+        
       </div>
 
       {/* Textový obsah a TAGY */}

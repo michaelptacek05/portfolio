@@ -60,7 +60,7 @@ export default function Footer() {
             <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white ml-1 underline">Zásady ochrany soukromí</a> a 
             <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white ml-1 underline">Smluvní podmínky</a> Google.
           </p>
-          <div className="hidden sm:block h-1 w-1 rounded-full bg-gray-800" />
+          
         </div>
       </div>
     </footer>

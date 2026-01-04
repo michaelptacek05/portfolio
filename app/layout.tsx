@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Cookie, Geist, Geist_Mono } from "next/font/google";
 import Navbar from "./components/navbar";
-import Swiper from "./components/swiper";
 import Footer from "./components/footer";
+import CookieBanner from "./components/cookieBanner";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,11 +35,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="cs">
       <body className="bg-[#0a0a0a] text-white selection:bg-white selection:text-black">
         <Navbar />
         {children}
         <Footer />
+        <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );

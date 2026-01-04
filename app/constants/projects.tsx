@@ -1,70 +1,60 @@
-// app/constants/projects.ts
+
 export interface Project {
-  slug: string; // Unikátní ID pro URL (např. "scoutly")
+  slug: string;
   title: string;
   description: string;
-  fullText: string; // Dlouhý text do modalu
+  fullText: string;
   tags: string[];
-  images: string[]; // Pole cest k obrázkům
+  images: string[];
+  projectUrl?: string;
 }
-
-// app/constants/projects.ts
 
 export const PROJECTS: Project[] = [
   // ... tvé předchozí projekty (pokud tam jsou)
   {
-    slug: "bf24", // Důležité: Unikátní ID pro URL
+    slug: "bf24",
     title: "Buď Fit 24",
     description: "Návrh zdravotní aplikace pro děti s nadváhou",
-    fullText: "Návrh mobilní zdravotní aplikace pro děti s nadváhou, projekt ",
-    tags: ["Adobe XD", "Illustrator"],
-    images: ["/project-links.png"], // Cesta k obrázku
+    fullText: "Komplexní návrh a prototyp zdravotní aplikace zaměřené na prevenci dětské obezity. Aplikace kombinuje monitoring pohybu skrze náramky Garmin a správu jídelníčku pod dohledem rodičů. Uživatelské rozhraní je navrženo hravě s využitím veselých barev pro motivaci dětí, přičemž striktně dodržuje ergonomická pravidla a standardy Material Designu.",
+    tags: ["Adobe XD", "Illustrator", "Material Design"], 
+    images: ["/projekty/bf24/bf1.png", "/projekty/bf24/bf2.webp", "/projekty/bf24/bf3.png"], 
+    projectUrl: "https://www.nzip.cz/bf24",
   },
   {
     slug: "poradci-chocen",
     title: "Poradci Choceň",
-    description: "Stránka pro finanční poradce",
-    fullText:
-      "Redesign webové stránky určené pro finanční poradce, nejdříve navržené ve figmě a poté vytvořeno přes Astro.js pro rychlost a výborné SEO.",
-    tags: ["Astro.js", "Tailwind CSS", "Figma", "Photoshop"],
-    images: ["/project-blog.png"],
+    description: "Webová stránka pro finanční poradce",
+    fullText: "Kompletní redesign webu pro finanční poradce. Projekt začal návrhem UI ve Figmě a byl realizován v moderním frameworku Astro.js, což zajistilo maximální rychlost načítání a špičkové SEO. Uživatelská zkušenost (UX) byla následně analyzována a optimalizována pomocí nástroje Microsoft Clarity.",
+    tags: ["Astro.js", "Tailwind CSS", "Figma", "Photoshop", "MS Clarity"],
+    images: ["/projekty/poradci/poradci1.png", "/projekty/poradci/poradci2.png"],
+    projectUrl: "https://poradci-chocen.cz/",
+    
   },
   {
     slug: "ipvz",
     title: "IPVZ Portál",
-    description: "Grafický návrh webové stránky a backendu systému pro IPVZ",
-    fullText:
-      "Spolupráce na UX/UI návrhách pro frontend a backend systému pro Institut postgraduálního vzdělávání ve zdravotnictví, analýza zastaralého systému a modernizace, příprava grafického vzhledu certifikátů.",
+    description: "Redesign a modernizace systému pro IPVZ",
+    fullText: "Spolupráce na UX/UI návrzích pro frontend i backend systému Institutu postgraduálního vzdělávání ve zdravotnictví (IPVZ). Součástí projektu byla analýza původního zastaralého řešení, kompletní modernizace uživatelského rozhraní a grafický návrh nových certifikátů.",
     tags: ["Adobe XD", "Photoshop", "Illustrator"],
-    images: ["/project-blog.png"],
+    images: ["/projekty/ipvz/ipvz1.png", "/projekty/ipvz/ipvz2.png", "/projekty/ipvz/ipvz3.png", "/projekty/ipvz/ipvz4.png"],
+    
   },
   {
     slug: "albatros",
     title: "Backend nakladatelství Albatros media",
-    description:
-      "Modernizace backendu a frontendu menších nakladatelství od Albatros Media",
-    fullText:
-      "Analýza a redesign backend systému nakladatelství vedených pod Albatros Media, redesign uživatelských flows včetně přístupnosti podle vyhlášky EU na frontend částech. ",
+    description: "Modernizace backendu a frontendu nakladatelství skupiny Albatros Media",
+    fullText: "Kompletní analýza a redesign backendových systémů pro nakladatelství spadající pod skupinu Albatros Media. Součástí projektu byla optimalizace uživatelských průchodů (User Flows) a úprava frontendu tak, aby splňoval přísné standardy přístupnosti dle aktuálních směrnic EU.",
     tags: ["Figma", "Adobe XD", "Illustrator", "Photoshop"],
-    images: ["/project-blog.png"],
-  },
-  {
-    slug: "profilog",
-    title: "Sada mobilních aplikací Profi-log",
-    description: "Specializované návrhy aplikací pro zdravotní sestry.",
-    fullText:
-      "Tvorba návrhů a testování mobilních aplikací Profi-log, určených pro konktrétní sestry, které sbírají data pacientů přes zařízení SCase (pro které je aplikace určená) a pracují s nimi v reálném čase.",
-    tags: ["Figma", "Adobe XD", "Illustrator", "Photoshop", "AutoCAD"],
-    images: ["/project-blog.png"],
+    images: ["/projekty/albatros/albatros1.png"],
   },
   {
     slug: "ms-tek",
     title: "MS-Tec Logistics Landing page",
-    description: "Grafický návrh webové stránky pro logistickou firmu",
-    fullText:
-      "Grafický návrh webové stránky pro logistickou firmu určený pro programátora.",
+    description: "Webdesign pro logistickou firmu",
+    fullText: "Návrh moderní a přehledné webové stránky pro logistickou firmu. Výstupem byl kompletní vizuální styl a technicky připravené podklady pro následné nakódování programátorem.",
     tags: ["Adobe XD", "Illustrator"],
-    images: ["/project-blog.png"],
+    images: ["/projekty/mstec/mstec1.png", "/projekty/mstec/mstec11.png", "/projekty/mstec/mstec3.png"],
+    projectUrl: "https://www.ms-tek.cz/en/logistic",
   },
 ];
 

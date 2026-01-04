@@ -16,6 +16,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: "2024 - současnost",
     description: "V MagicWare analyzuji a tvořím interaktivní wireframes webových i mobilních aplikací, stránek a systémů, vylepšuji staré weby a optimalizuji SEO a přístupnost, tvořím a designuji řadu tiskových produktů od brožur, vizitek, log a mockupů a řeším systémové chyby, které se objevují.",
     skills: ["Figma", "Adobe Suite", "HTML", "CSS", "SASS", "JavaScript ES6+", "React", "Tailwind", "Testing", "SEO"]
+
   },
   {
     role: "Graphic designer and Web developer",
