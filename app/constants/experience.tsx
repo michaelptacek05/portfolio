@@ -1,9 +1,9 @@
 
 export interface ExperienceItem {
   role: string;
-  type: string; // Např. "Plný úvazek"
+  type: string;
   company: string;
-  period: string; // Např. "2023 - současnost"
+  period: string;
   description: string;
   skills: string[];
 }

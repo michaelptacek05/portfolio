@@ -10,7 +10,6 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-  // ... tvé předchozí projekty (pokud tam jsou)
   {
     slug: "bf24",
     title: "Buď Fit 24",

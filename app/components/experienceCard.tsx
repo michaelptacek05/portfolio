@@ -1,4 +1,3 @@
-import React from "react";
 import { ExperienceItem } from "@/app/constants/experience";
 
 export default function ExperienceCard({

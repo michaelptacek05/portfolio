@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { FiMail, FiPhone, FiMapPin, FiLoader } from "react-icons/fi"; // Odebrán FiSend
+import { FiMail, FiPhone, FiMapPin, FiLoader } from "react-icons/fi";
 import {
   GoogleReCaptchaProvider,
   useGoogleReCaptcha,
@@ -12,7 +12,6 @@ import {
 import { PrimaryButton } from "@/app/components/button";
 import { Reveal } from "../components/reveal";
 
-// --- Zbytek logiky validace zůstává stejný ---
 const contactSchema = z.object({
   fullName: z.string().min(2, "Jméno musí mít alespoň 2 znaky"),
   company: z.string().optional(),
@@ -27,7 +26,6 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-// --- Komponenta Formuláře ---
 function ContactForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,7 +43,6 @@ function ContactForm() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    // 1. Kontrola, zda je reCAPTCHA načtená
     if (!executeRecaptcha) {
       console.log("ReCaptcha not yet available");
       return;
@@ -54,19 +51,15 @@ function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // 2. Získání tokenu (tohle tam zůstává)
       const token = await executeRecaptcha("contact_form");
 
-      // --- TADY ZAČÍNÁ ZMĚNA ---
-      // 3. Odeslání dat na tvůj vlastní backend (/api/send-email)
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          // Mapování dat z formuláře na to, co očekává backend:
-          name: data.fullName, // Ve formuláři je to 'fullName', backend čeká 'name'
+          name: data.fullName,
           email: data.email,
-          // Protože backend čeká jen "message", sloučíme tam i firmu a telefon, ať se neztratí
+
           message: `Firma: ${data.company || "-"} \nTelefon: ${
             data.phone || "-"
           }\n\nZpráva:\n${data.message}`,
@@ -74,16 +67,13 @@ function ContactForm() {
         }),
       });
 
-      // 4. Kontrola, jestli se to povedlo (status 200 OK)
       if (response.ok) {
         setSubmitStatus("success");
-        reset(); // Vymaže formulář
+        reset();
       } else {
-        // Pokud server vrátí chybu (např. 400 nebo 500)
         console.error("Chyba při odesílání");
         setSubmitStatus("error");
       }
-      // --- KONEC ZMĚNY ---
     } catch (error) {
       console.error("Kritická chyba:", error);
       setSubmitStatus("error");
@@ -94,7 +84,6 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      {/* Řádek 1: Jméno a Firma */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label className="text-sm text-gray-400 ml-3 font-medium">
@@ -125,8 +114,6 @@ function ContactForm() {
           />
         </div>
       </div>
-
-      {/* Řádek 2: Email a Telefon */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label className="text-sm text-gray-400 ml-3 font-medium">
@@ -163,7 +150,6 @@ function ContactForm() {
         </div>
       </div>
 
-      {/* Zpráva */}
       <div className="space-y-2">
         <label className="text-sm text-gray-400 ml-3 font-medium">Zpráva</label>
         <textarea
@@ -178,8 +164,6 @@ function ContactForm() {
           </p>
         )}
       </div>
-
-      {/* 2. POUŽITÍ TVOJÍ KOMPONENTY PRIMARYBUTTON */}
       <div className="pt-4">
         <PrimaryButton
           type="submit"
@@ -196,7 +180,6 @@ function ContactForm() {
         </PrimaryButton>
       </div>
 
-      {/* Status hlášky */}
       {submitStatus === "success" && (
         <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-2xl text-green-400 text-sm text-center">
           Děkuji! Zpráva byla úspěšně odeslána. Brzy se vám ozvu.
@@ -212,7 +195,6 @@ function ContactForm() {
   );
 }
 
-// --- Hlavní Page Komponenta ---
 export default function ContactPage() {
   return (
     <GoogleReCaptchaProvider
@@ -222,13 +204,9 @@ export default function ContactPage() {
     >
       <Reveal width="100%" delay={0.2}>
         <main className="min-h-screen bg-[#050505] text-white pt-32 pb-24 px-6 relative overflow-hidden">
-          {/* Ambientní Glow */}
           <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-gradient-to-r from-blue-900/20 to-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
 
           <div className="max-w-6xl mx-auto relative z-10">
-            {/* 3. NOVÝ LAYOUT - Grid místo karty */}
-
-            {/* Hlavní nadpis sekce */}
             <div className="mb-16 md:mb-24 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl mb-4 tracking-tight">
                 Kontaktujte mě
@@ -238,12 +216,8 @@ export default function ContactPage() {
                 nebo máte dotaz? Napište mi a probereme to.
               </p>
             </div>
-
-            {/* Grid rozdělení: Vlevo info, Vpravo formulář */}
             <Reveal width="100%" delay={0.4}>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-                {/* Levá strana - Kontaktní údaje (nyní bez pozadí karty) */}
-
                 <div className="lg:col-span-5 space-y-12">
                   <div className="space-y-8">
                     <div className="flex items-start gap-5 group">
@@ -292,9 +266,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-
-                {/* Pravá strana - Formulář (sedí přímo na pozadí) */}
-
                 <div className="lg:col-span-7">
                   <ContactForm />
                 </div>

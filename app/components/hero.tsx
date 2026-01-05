@@ -7,7 +7,6 @@ export default function Hero() {
   return (
     <Reveal width="100%" delay={0.1}>
       <section className="relative pt-32 pb-20 flex flex-col items-center px-6 overflow-hidden">
-        {/* ambientní záře */}
         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full" />
 
         <div className="relative w-48 h-48 mb-8">
@@ -35,20 +34,12 @@ export default function Hero() {
           praxí.
         </p>
 
-        {/* Akce */}
         <div className="flex flex-col sm:flex-row gap-4 items-center">
-          {/* 1. TLAČÍTKO - Interní odkaz (např. na stránku Kontakt) */}
           <Link href="/contact">
-            {/* Pokud máš kontakt dole na téže stránce, použij href="#kontakt" */}
             <PrimaryButton>spojte se</PrimaryButton>
           </Link>
 
-          {/* 2. TLAČÍTKO - Externí soubor (PDF) */}
-          <a
-            href="/cv.pdf" // Cesta k souboru (viz níže)
-            target="_blank" // Otevře v novém okně (To je to UX řešení)
-            rel="noopener noreferrer" // Bezpečnostní nutnost při target="_blank"
-          >
+          <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
             <OutlineButton>životopis</OutlineButton>
           </a>
         </div>

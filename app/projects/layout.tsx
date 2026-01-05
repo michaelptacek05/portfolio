@@ -1,4 +1,3 @@
-// app/projects/layout.tsx
 export default function ProjectsLayout({
   children,
 }: {

@@ -1,5 +1,3 @@
-// app/projects/page.tsx
-import React from 'react';
 import ProjectCard from '../components/projectCard';
 import { PROJECTS } from '../constants/projects';
 import { Reveal } from '../components/reveal';
@@ -9,7 +7,7 @@ export default function ProjectsPage() {
     <Reveal width='100%' delay={0.2}>
     <main className="min-h-screen bg-[#050505] text-white pt-32 pb-20 px-6 relative overflow-hidden">
       
-      {/* ... (Záře a nadpisy zůstávají stejné) ... */}
+      
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[400px] bg-gradient-to-r from-purple-900/30 to-orange-900/30 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -21,23 +19,14 @@ export default function ProjectsPage() {
             Sbírka mých projektů, na kterých jsem se podílel.
           </p>
         </div>
-
-        {/* TADY JE TEN 7. KROK - ZMĚNA DAT */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {PROJECTS.map((project) => (
             <ProjectCard 
               key={project.slug}
-              
-              // Předáváme data z konstanty
               title={project.title}
               description={project.description}
               tags={project.tags}
-              
-              // Vezmeme první obrázek jako náhledovku (pokud existuje)
               image={project.images[0] || ""} 
-              
-              // !!! TOHLE JE TO NEJDŮLEŽITĚJŠÍ !!!
-              // Vytváříme URL, která spustí modal
               href={`/projects/${project.slug}`} 
             />
           ))}
