@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Cookie, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import CookieBanner from "./components/cookieBanner";
@@ -16,20 +16,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const navLinks = [
-  { name: "Domů", href: "/" },
-  { name: "O mně", href: "#" },
-  { name: "Moje práce", href: "#" },
-  { name: "Pracovní zkušenost", href: "#" },
-  { name: "Kontakt", href: "#" },
-];
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Michael Ptáček",
-  url: "https://michaelptacek.com",
-  image: "https://michaelptacek.com/photo.jpg",
+  url: "https://www.michaelptacek.com",
+  image: "https://www.michaelptacek.com/photo.jpg",
   sameAs: [
     "https://www.linkedin.com/in/ptacekmichael/",
     "https://github.com/michaelptacek05/",
@@ -54,16 +46,40 @@ export const metadata: Metadata = {
   },
   description:
     "UX designer a frontend web developer s víceletou zkušeností a praxí v jedné osobě.",
-  metadataBase: new URL("https://michaelptacek.com"),
-  keywords: ['Web development', 'Next.js', 'React', 'Portfolio', 'Programátor Praha', 'Programator praha východ', 'Webové stránky', 'Web praha východ', 'UX Designer', 'Grafik'],
+
+  metadataBase: new URL("https://www.michaelptacek.com"),
+  keywords: [
+    "Web development",
+    "Next.js",
+    "React",
+    "Portfolio",
+    "Programátor Praha",
+    "Programator praha východ",
+    "Webové stránky",
+    "Web praha východ",
+    "UX Designer",
+    "Grafik",
+  ],
   alternates: {
-    canonical: "/",
+    canonical: "./",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     title: "Michael Ptáček",
     description:
       "UX designer a frontend web developer s víceletou zkušeností a praxí v jedné osobě.",
-    url: "https://michaelptacek.com",
+    url: "https://www.michaelptacek.com",
     siteName: "Michael Ptáček",
     locale: "cs_CZ",
     type: "website",
@@ -78,6 +94,12 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body className="bg-[#0a0a0a] text-white selection:bg-white selection:text-black">
+        {/* Vložení JSON-LD skriptu, který předtím chyběl */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         <Navbar />
         {children}
         <Footer />
