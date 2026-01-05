@@ -60,9 +60,6 @@ export const metadata: Metadata = {
     "UX Designer",
     "Grafik",
   ],
-  alternates: {
-    canonical: "./",
-  },
 
   robots: {
     index: true,
