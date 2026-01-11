@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { NAV_LINKS } from "../constants/links";
-import { Reveal } from "./reveal";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,9 +44,11 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="mt-2 p-2">
-                <button className="w-full border border-white/10 bg-white/5 px-4 py-3 rounded-xl hover:bg-white hover:text-black transition text-sm font-bold text-white uppercase tracking-wider">
-                  Spojit se ↗
-                </button>
+                <Link href="/contact">
+                  <button className="w-full border border-white/10 bg-white/5 px-4 py-3 rounded-xl hover:bg-white hover:text-black transition text-sm font-bold text-white uppercase tracking-wider">
+                    Spojit se ↗
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -54,9 +56,11 @@ export default function Navbar() {
       </div>
 
       <div className="absolute right-10 top-1 hidden md:block">
-        <button className="flex items-center gap-2 border border-white/20 px-6 py-2.5 rounded-full hover:bg-white hover:text-black transition duration-300 text-white font-medium text-sm">
-          spojit se <span className="text-xs">↗</span>
-        </button>
+        <Link href="contact">
+          <button className="flex items-center gap-2 border border-white/20 px-6 py-2.5 rounded-full hover:bg-white hover:text-black transition duration-300 text-white font-medium text-sm cursor-pointer">
+            spojit se <span className="text-xs">↗</span>
+          </button>
+        </Link>
       </div>
     </nav>
   );
