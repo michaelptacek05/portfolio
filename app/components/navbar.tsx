@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { NAV_LINKS } from "../constants/links";
 import Link from "next/link";
