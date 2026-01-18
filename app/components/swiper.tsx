@@ -28,6 +28,7 @@ import {
   SiAffinity,
   SiDavinciresolve,
   SiGit,
+  SiTypescript,
 } from "react-icons/si";
 import { Reveal } from "./reveal";
 
@@ -40,6 +41,7 @@ const TECH_STACK_DATA: TechItem[] = [
   { name: "HTML5", icon: SiHtml5 },
   { name: "CSS3", icon: SiCss3 },
   { name: "JavaScript", icon: SiJavascript },
+  { name: "TypeScript", icon: SiTypescript },
   { name: "Tailwind CSS", icon: SiTailwindcss },
   { name: "Astro.js", icon: SiAstro },
   { name: "React", icon: SiReact },
