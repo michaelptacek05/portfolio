@@ -5,7 +5,7 @@ export default function PrivacyPage() {
     <Reveal width="100%" delay={0.2}>
       <main className="min-h-screen text-white pt-32 pb-24 px-6">
         <div className="max-w-3xl mx-auto space-y-8">
-          <h1 className="text-4xl font-bold mb-8">
+          <h1 className="text-4xl font-bold font-serif mb-8">
             Zásady ochrany osobních údajů
           </h1>
 

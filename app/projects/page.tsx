@@ -12,8 +12,8 @@ export default function ProjectsPage() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl mb-4 tracking-tight">
-            Projekty
+          <h1 className="text-4xl md:text-5xl mb-4 tracking-tight font-serif">
+            projekty
           </h1>
           <p className="text-gray-400 leading-relaxed mb-10 text-center lg:text-left">
             Sbírka mých projektů, na kterých jsem se podílel.

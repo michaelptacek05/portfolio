@@ -11,8 +11,8 @@ export default function ExperiencePage() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="mb-16">
-            <h1 className="text-4xl md:text-5xl mb-4 tracking-tight">
-              Pracovní zkušenosti
+            <h1 className="text-4xl md:text-5xl mb-4 tracking-tight font-serif">
+              pracovní zkušenosti
             </h1>
             <p className="text-gray-400 leading-relaxed mb-10 text-center lg:text-left">
               Přehled mé profesní dráhy a uplatněných dovedností.

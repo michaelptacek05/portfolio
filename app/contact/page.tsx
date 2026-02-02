@@ -208,8 +208,8 @@ export default function ContactPage() {
 
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="mb-16 md:mb-24 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl mb-4 tracking-tight">
-                Kontaktujte mě
+              <h1 className="text-4xl md:text-5xl mb-4 tracking-tight font-serif">
+                kontaktujte mě
               </h1>
               <p className="text-gray-400 leading-relaxed mb-10 text-center lg:text-left">
                 Zaujala vás moje práce? Potřebujete pomoci s novým projektem
