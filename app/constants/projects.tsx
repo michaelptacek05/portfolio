@@ -30,6 +30,16 @@ export const PROJECTS: Project[] = [
     
   },
   {
+    slug: "ulazebnika",
+    title: "Barbershop U Lazebníka",
+    description: "Webová stránka pro Barbershop",
+    fullText: "Design a realizace webové stránky pro barbershop. Celá stránka je statická a postavena na frameworku Astro.js, což zajišťuje rychlé načítání a optimalizaci pro vyhledávače.",
+    tags: ["Astro.js"],
+    images: ["/projekty/ulazebnika/ulazebnika.png"],
+    projectUrl: "https://barbershopulazebnika.cz/",
+    
+  },
+  {
     slug: "ipvz",
     title: "IPVZ Portál",
     description: "Redesign a modernizace systému pro IPVZ",
