@@ -19,11 +19,11 @@ export const EXPERIENCES: ExperienceItem[] = [
 
   },
   {
-    role: "Graphic designer and Web developer",
+    role: "Freelance web developer and Designer",
     type: "Freelance",
     company: "Freelance",
     period: "2023 - současnost",
-    description: "Tvorba webových stránek s důrazem na SEO, grafický design a hloubková analýza uživatelského prožitku (UX).",
-    skills: ["Figma", "Adobe Suite", "HTML", "CSS", "React", "Astro.js", "Tailwind", "SEO", "MS Clarity"]
+    description: "Tvorba webových stránek a aplikací s důrazem na SEO a grafický design. Provádím hloubkovou analýzu uživatelského prožitku (UX) a zajišťuji bezstarostný provoz i správu webů na vlastním VPS pomocí kontejnerů.",
+    skills: ["Figma", "Adobe Suite", "HTML", "CSS", "React", "Astro.js", "Tailwind", "SEO", "MS Clarity", "Docker", "Testing", "DevOps"]
   },
 ];
