@@ -25,7 +25,7 @@ export default function Hero() {
         </p>
 
         <h1 className="text-5xl md:text-8xl font-serif text-center max-w-5xl leading-[1.1] tracking-tight mb-10">
-          ux engineer <br />
+          fullstack developer <br />
           <span className="text-gray-500 italic">z Prahy</span>
         </h1>
 
