@@ -49,12 +49,12 @@ export default function Footer() {
                         <p className="text-sm text-gray-500 font-medium text-center sm:text-left">
                             © {currentYear} Michael Ptáček
                         </p>
-                        <p className="text-sm text-gray-600 mb-4">
+                        <p className="text-xs text-gray-500 mt-4 text-left">
                             Tento web používá soubory cookies k vylepšování
                             uživatelského zážitku.{" "}
                             <Link
                                 href="/privacy"
-                                className="underline hover:text-black"
+                                className="text-gray-400 hover:text-white ml-1 underline"
                             >
                                 Více informací
                             </Link>
