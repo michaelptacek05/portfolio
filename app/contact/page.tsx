@@ -245,7 +245,7 @@ export default function ContactPage() {
                           href="tel:+420123456789"
                           className="text-gray-400 hover:text-white transition-colors text-lg"
                         >
-                          +420 775 435 808
+                          na vyžádání
                         </a>
                       </div>
                     </div>
