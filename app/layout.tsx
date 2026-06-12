@@ -27,7 +27,7 @@ const jsonLd = {
     "https://github.com/michaelptacek05/",
     "https://www.instagram.com/michal.718/",
   ],
-  jobTitle: "UX Engineer",
+  jobTitle: "software engineer",
   worksFor: {
     "@type": "Organization",
     name: "Freelancer",
@@ -41,11 +41,11 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | UX Engineer",
-    default: "Michael Ptáček | UX Engineer",
+    template: "%s | Software Engineer",
+    default: "Michael Ptáček | Software Engineer",
   },
   description:
-    "UX designer a frontend web developer s víceletou zkušeností a praxí v jedné osobě.",
+    "Software engineer a frontend web developer s víceletou zkušeností a praxí v jedné osobě.",
 
   metadataBase: new URL("https://www.michaelptacek.com"),
   keywords: [
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Michael Ptáček",
     description:
-      "UX designer a frontend web developer s víceletou zkušeností a praxí v jedné osobě.",
+      "Software engineer a frontend web developer s víceletou zkušeností a praxí v jedné osobě.",
     url: "https://www.michaelptacek.com",
     siteName: "Michael Ptáček",
     locale: "cs_CZ",

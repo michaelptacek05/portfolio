@@ -1,0 +1,25 @@
+services:
+  app:
+    container_name: portfolio
+    image: ghcr.io/michaelptacek05/portfolio:latest
+    restart: always
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    networks:
+      - nginx-proxy-manager_default
+
+  watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      WATCHTOWER_POLL_INTERVAL: 300
+      WATCHTOWER_CLEANUP: "true"
+    networks:
+      - nginx-proxy-manager_default
+
+networks:
+  nginx-proxy-manager_default:
+    external: true
