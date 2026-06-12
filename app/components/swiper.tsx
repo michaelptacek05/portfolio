@@ -24,6 +24,7 @@ import {
     SiDavinciresolve,
     SiTypescript,
     SiVite,
+    SiDocker,
 } from "react-icons/si";
 import { Reveal } from "./reveal";
 
@@ -38,16 +39,17 @@ const TECH_STACK_DATA: TechItem[] = [
     { name: "Sass", icon: SiSass },
     { name: "Tailwind CSS", icon: SiTailwindcss },
     { name: "TypeScript", icon: SiTypescript },
-    { name: "Astro.js", icon: SiAstro },
+    { name: "Docker", icon: SiDocker },
     { name: "React", icon: SiReact },
     { name: "Next.js", icon: SiNextdotjs },
     { name: "Vite", icon: SiVite },
+    { name: "Astro.js", icon: SiAstro },
     { name: "PHP", icon: SiPhp },
     { name: "Symfony", icon: SiSymfony },
     { name: "Nette Framework", icon: SiNette },
     { name: "Figma", icon: SiFigma },
     { name: "Adobe XD", icon: SiAdobexd },
-    { name: "Adobe Phoshotop", icon: SiAdobephotoshop },
+    { name: "Adobe Photoshop", icon: SiAdobephotoshop },
     { name: "Adobe Illustrator", icon: SiAdobeillustrator },
     { name: "Adobe InDesign", icon: SiAdobeindesign },
     { name: "Affinity", icon: SiAffinity },
